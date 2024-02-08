@@ -1,0 +1,42 @@
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Ajouter une matiére</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label">Nom Matiére
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" name="nomMatiere" [(ngModel)]="nomMatiere"
+                                        placeholder="Entrer nom de matiére" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label">Section
+                                    Associé
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" name="sectionId"
+                                        [(ngModel)]="sectionId">
+                                        <option *ngFor="let section of sections" [value]="section.id">
+                                            {{section.nom}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <a (click)="addMatiere()" class="btn btn-primary me-2">Ajouter</a>
+                            <a routerLink="/matieres" class="btn btn-danger">Annuler</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

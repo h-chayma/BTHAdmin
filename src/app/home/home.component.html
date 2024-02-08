@@ -1,0 +1,78 @@
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-3 col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="icon-box icon-box-lg bg-success-light rounded-circle">
+                                <i class="fa-solid fa-user fa-lg" style="color: #3a9b94;"></i>
+                            </div>
+                            <div class="total-projects ms-3">
+                                <h3 class="text-success count">0</h3>
+                                <span>Nombre des visiteurs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="icon-box icon-box-lg bg-primary-light rounded-circle">
+                                <i class="fa-solid fa-layer-group fa-lg" style="color: #452b90;"></i>
+                            </div>
+                            <div class="total-projects ms-3">
+                                <h3 class="text-primary count">{{sectionCount | async}}</h3>
+                                <span>Nombre des sections</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="icon-box icon-box-lg bg-purple-light rounded-circle">
+                                <i class="fa-solid fa-book fa-lg" style="color: #bb6bd9;"></i>
+                            </div>
+                            <div class="total-projects ms-3">
+                                <h3 class="text-purple count">{{matiereCount | async}}</h3>
+                                <span>Nombre des matiéres</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="icon-box icon-box-lg bg-danger-light rounded-circle">
+                                <i class="fa-solid fa-file fa-lg" style="color: #ff5e5e;"></i>
+                            </div>
+                            <div class="total-projects ms-3">
+                                <h3 class="text-danger count">{{epreuveCount | async}}</h3>
+                                <span>Nombre des épreuves</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card overflow-hidden">
+                    <div class="card-header border-0 pb-0 flex-wrap">
+                        <h4 class="heading mb-2">La répartition des épreuves par année</h4>
+                    </div>
+                    <div class="card-body custome-tooltip p-3">
+                        <canvas baseChart [datasets]="epreuvesByYearData" [labels]="epreuvesByYearLabels"
+                            [options]="chartOptions" [type]="chartType">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

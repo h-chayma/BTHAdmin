@@ -1,0 +1,87 @@
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Ajouter une épreuve</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label">Année d'Épreuve
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" name="anneeEpreuve"
+                                        [(ngModel)]="anneeEpreuve" placeholder="Entrer année de l'épreuve" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label">Enoncé (Session Principale)
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" name="enoncePr" [(ngModel)]="enoncePr"
+                                        placeholder="Entrer l'enoncé" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label">Corrigé (Session Principale)
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" name="corrigePr" [(ngModel)]="corrigePr"
+                                        placeholder="Entrer le corrigé" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label">Enoncé (Session Controle)
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" name="enonceCon" [(ngModel)]="enonceCon"
+                                        placeholder="Entrer l'enoncé" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label">Corrigé (Session Controle)
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" name="corrigeCon" [(ngModel)]="corrigeCon"
+                                        placeholder="Entrer le corrigé" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label">Section Associé
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" name="selectedSection" [(ngModel)]="selectedSection"
+                                        (change)="onSectionChange()">
+                                        <option *ngFor="let section of sections" [value]="section.id">{{section.nom}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label">Matière Associée
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <select class="form-control" name="selectedMatiere" [(ngModel)]="selectedMatiere" [disabled]="!sectionSelected" >
+                                        <option *ngFor="let matiere of matieres" [value]="matiere.id">{{matiere.nom}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <a (click)="addEpreuve()" class="btn btn-primary me-2">Ajouter</a>
+                            <a routerLink="/epreuves" class="btn btn-danger">Annuler</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

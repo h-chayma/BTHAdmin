@@ -1,0 +1,11 @@
+<div id="preloader">
+    <div>
+        <img src="assets/images/pre.gif" alt="">
+    </div>
+</div>
+<div id="main-wrapper" [ngClass]="{'background': isLoginPage}">
+    <app-header *ngIf="!isLoginPage"></app-header>
+    <app-sidebar *ngIf="!isLoginPage"></app-sidebar>
+    <router-outlet></router-outlet>
+    <app-footer *ngIf="!isLoginPage"></app-footer>
+</div>

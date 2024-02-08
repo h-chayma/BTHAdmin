@@ -1,0 +1,82 @@
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Ajouter une épreuve</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label">Année d'Épreuve
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" name="anneeEpreuve"
+                                        [(ngModel)]="epreuveDetails.annee" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label">Enoncé (Session Principale)
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" name="enoncePr"
+                                        [(ngModel)]="epreuveDetails.enoncePr" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label">Corrigé (Session Principale)
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" name="corrigePr"
+                                        [(ngModel)]="epreuveDetails.corrigePr" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label">Enoncé (Session Controle)
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" name="enonceCon"
+                                        [(ngModel)]="epreuveDetails.enonceCon" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label">Corrigé (Session Controle)
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" name="corrigeCon"
+                                        [(ngModel)]="epreuveDetails.corrigeCon" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label">Section Associé
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control disabled" name="sectionNom"
+                                        [(ngModel)]="sectionDetails.nom" disabled>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label">Matière Associée
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control disabled" name="matiereNom"
+                                        [(ngModel)]="matiereDetails.nom" disabled>
+                                </div>
+                            </div>
+                            <a (click)="updateEpreuve()" class="btn btn-primary me-2">Modifier</a>
+                            <a routerLink="/epreuves" class="btn btn-danger">Annuler</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-center">
+    <div class="card col-lg-5 mt-5">
+        <div class="card-body">
+            <div class="logo-header">
+                <a href="index.html" class="logo"><img src="assets/images/logo/logo-full.png" alt=""
+                        class="width-230"></a>
+            </div>
+            <form (submit)="onSubmit()">
+                <h3 class="form-title m-t0">Informations personnelles</h3>
+                <div class="dz-separator-outer m-b5">
+                    <div class="dz-separator bg-primary style-liner"></div>
+                </div>
+                <p>Entrez votre nom d'utilisateur et votre mot de passe. </p>
+                <div class="col-12 mb-3">
+                    <input type="text" class="form-control" name="login" placeholder="Nom d'utilisateur" required
+                        [(ngModel)]="loginValue">
+                </div>
+                <div class="col-12 mb-3">
+                    <input type="password" class="form-control" name="password" placeholder="Mot de passe" required
+                        [(ngModel)]="passwordValue">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary button-md btn-block">Se Connecter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
